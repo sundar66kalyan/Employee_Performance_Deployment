@@ -42,7 +42,6 @@ if CONFIG_FOLDER not in sys.path:
 # Logo
 # ==========================================================
 
-# Logo path: D:\Employee_Performance_Deployment\assets\images\logo.png
 logo_path = os.path.join(
     PROJECT_ROOT,
     "assets",
@@ -50,14 +49,12 @@ logo_path = os.path.join(
     "logo.png"
 )
 
-# Check if logo exists and display it
 if os.path.exists(logo_path):
     st.image(
         logo_path,
         width=180
     )
 else:
-    # Try alternative path without images folder
     alt_logo_path = os.path.join(
         PROJECT_ROOT,
         "assets",
@@ -84,8 +81,6 @@ st.markdown(
     html, body, [class*="css"] {
         font-family: 'Poppins', sans-serif;
     }
-
-    /* ---------- Keyframes ---------- */
 
     @keyframes fadeInUp {
         0%   { opacity: 0; transform: translateY(30px); }
@@ -171,8 +166,6 @@ st.markdown(
         100% { transform: scale(1); }
     }
 
-    /* ---------- Animated Hero Header ---------- */
-
     .hero-header {
         background: linear-gradient(270deg, #667eea, #764ba2, #06b6d4, #667eea);
         background-size: 400% 400%;
@@ -224,8 +217,6 @@ st.markdown(
         z-index: 1;
     }
 
-    /* ---------- Animated Metric Cards ---------- */
-
     .glass-card {
         background: rgba(255, 255, 255, 0.08);
         border: 1px solid rgba(255, 255, 255, 0.15);
@@ -261,8 +252,6 @@ st.markdown(
         letter-spacing: 0.8px;
     }
 
-    /* ---------- Section fade-in wrapper ---------- */
-
     .fade-section {
         animation: fadeInUp 0.7s ease;
     }
@@ -274,8 +263,6 @@ st.markdown(
     .slide-right {
         animation: slideInRight 0.6s ease;
     }
-
-    /* ---------- Result badge ---------- */
 
     .result-badge {
         display: inline-block;
@@ -302,8 +289,6 @@ st.markdown(
         color: white;
         animation: pulseGlow 2s ease-in-out infinite;
     }
-
-    /* ---------- Animated confidence bars ---------- */
 
     .conf-row {
         margin-bottom: 0.8rem;
@@ -342,8 +327,6 @@ st.markdown(
         color: #667eea;
     }
 
-    /* ---------- Buttons ---------- */
-
     div.stButton > button, div.stDownloadButton > button {
         border-radius: 14px !important;
         font-weight: 700 !important;
@@ -364,8 +347,6 @@ st.markdown(
     div.stButton > button:active {
         transform: scale(0.95);
     }
-
-    /* ---------- Sidebar styling ---------- */
 
     section[data-testid="stSidebar"] {
         animation: fadeIn 0.6s ease;
@@ -388,8 +369,6 @@ st.markdown(
         transition: all 0.2s ease;
     }
 
-    /* ---------- Success/Warning/Error boxes ---------- */
-
     .stSuccess, .stWarning, .stError {
         border-radius: 12px !important;
         animation: fadeInUp 0.5s ease !important;
@@ -408,21 +387,15 @@ st.markdown(
         border-left-color: #ef4444 !important;
     }
 
-    /* ---------- Input fields ---------- */
-
     .stNumberInput, .stSelectbox, .stSlider {
         animation: fadeInUp 0.5s ease;
     }
-
-    /* ---------- Spinner ---------- */
 
     .stSpinner > div {
         border-color: #667eea !important;
         border-top-color: transparent !important;
         animation: rotateGlow 1s linear infinite !important;
     }
-
-    /* ---------- Security Badge ---------- */
 
     .security-badge {
         display: inline-block;
@@ -435,8 +408,6 @@ st.markdown(
         animation: securityShield 3s ease-in-out infinite;
         margin-left: 0.3rem;
     }
-
-    /* ---------- Animated Footer ---------- */
 
     .footer-container {
         text-align: center;
@@ -469,35 +440,6 @@ st.markdown(
         margin-bottom: 1.5rem;
     }
 
-    .footer-links {
-        margin: 1.5rem 0;
-        display: flex;
-        justify-content: center;
-        gap: 2rem;
-        flex-wrap: wrap;
-    }
-
-    .footer-link {
-        color: #667eea;
-        text-decoration: none;
-        font-weight: 600;
-        font-size: 1.05rem;
-        padding: 0.5rem 1rem;
-        border-radius: 8px;
-        transition: all 0.3s ease;
-        border: 2px solid transparent;
-        animation: fadeInUp 0.6s ease;
-        display: inline-block;
-    }
-
-    .footer-link:hover {
-        transform: scale(1.08);
-        border-color: #667eea;
-        background: rgba(102, 126, 234, 0.1);
-        box-shadow: 0 0 20px rgba(102, 126, 234, 0.2);
-        color: #667eea;
-    }
-
     .footer-divider {
         max-width: 400px;
         margin: 1.5rem auto;
@@ -527,7 +469,6 @@ st.markdown(
         margin-top: 0.5rem;
     }
 
-    /* Animated badge for technologies */
     .tech-badge {
         display: inline-block;
         background: rgba(102, 126, 234, 0.15);
@@ -547,16 +488,25 @@ st.markdown(
         box-shadow: 0 0 15px rgba(102, 126, 234, 0.2);
     }
 
-    /* Secure link styling */
-    .secure-link {
-        position: relative;
+    /* GitHub link styling */
+    .github-link {
+        display: inline-block;
+        margin-top: 0.5rem;
+        padding: 0.3rem 1rem;
+        background: rgba(102, 126, 234, 0.15);
+        border: 1px solid rgba(102, 126, 234, 0.3);
+        border-radius: 20px;
+        color: #667eea !important;
+        text-decoration: none;
+        font-size: 0.85rem;
+        font-weight: 600;
+        transition: all 0.3s ease;
     }
 
-    .secure-link::after {
-        content: '🔒';
-        font-size: 0.7rem;
-        margin-left: 0.3rem;
-        animation: securityShield 3s ease-in-out infinite;
+    .github-link:hover {
+        background: rgba(102, 126, 234, 0.25);
+        transform: scale(1.05);
+        box-shadow: 0 0 20px rgba(102, 126, 234, 0.2);
     }
 
     </style>
@@ -683,22 +633,6 @@ st.sidebar.write("**Kalyana Sundar**")
 st.sidebar.write("AI Engineer | ML | Data Science")
 st.sidebar.markdown("---")
 
-# Social Links with Security Badges
-st.sidebar.markdown("### 🌐 Connect")
-st.sidebar.markdown(
-    """
-📂 **GitHub**  
-https://github.com/sundar66kalyan/Employee_Performance_Deployment 🔒
-"""
-)
-st.sidebar.markdown(
-    """
-💼 **LinkedIn**  
-https://www.linkedin.com/in/kalyana-sundar-912403285 🔒
-"""
-)
-st.sidebar.markdown("---")
-
 # Navigation
 page = st.sidebar.radio(
     "Navigation",
@@ -736,7 +670,7 @@ if page == "🏠 Home":
     with col3:
         st.markdown(glass_metric("10", "Algorithms", 0.2), unsafe_allow_html=True)
     with col4:
-        st.markdown(glass_metric("Gradient\nBoosting", "Best Model", 0.3), unsafe_allow_html=True)
+        st.markdown(glass_metric("92%", "Model Accuracy", 0.3), unsafe_allow_html=True)
 
     st.markdown("<br>", unsafe_allow_html=True)
 
@@ -865,8 +799,17 @@ elif page == "ℹ About Project":
     ✔ Hyperparameter Tuning  
     ✔ Gradient Boosting Final Model  
     ✔ Explainable AI using Feature Importance  
-    ✔ 89% Model Accuracy  
+    ✔ **92% Model Accuracy**  
     """)
+
+    st.subheader("📊 Model Performance")
+    
+    performance_data = {
+        "Metric": ["Accuracy", "Balanced Accuracy", "Precision", "Recall", "F1 Score", "ROC-AUC"],
+        "Score": ["92.5%", "85.37%", "92.4%", "92.5%", "92.34%", "97.77%"]
+    }
+    performance_df = pd.DataFrame(performance_data)
+    st.dataframe(performance_df, use_container_width=True, hide_index=True)
 
     st.subheader("🔄 Machine Learning Workflow")
     st.write("""
@@ -905,8 +848,6 @@ elif page == "ℹ About Project":
     st.subheader("👨‍💻 Developer Information")
     st.write("**Kalyana Sundar**")
     st.write("AI Engineer | Machine Learning | Data Science")
-    st.markdown("📂 **GitHub:** https://github.com/sundar66kalyan/Employee_Performance_Deployment 🔒")
-    st.markdown("💼 **LinkedIn:** https://www.linkedin.com/in/kalyana-sundar-912403285 🔒")
 
     st.subheader("📚 References")
     st.write("""
@@ -1273,7 +1214,7 @@ elif page == "📈 Prediction":
         st.markdown('</div>', unsafe_allow_html=True)
 
 # ==========================================================
-# Animated Footer with Secure Links
+# Animated Footer with GitHub Link
 # ==========================================================
 
 st.markdown("---")
@@ -1285,27 +1226,6 @@ with col2:
     st.markdown("### 👨‍💻 Developed By")
     st.markdown("## Kalyana Sundar")
     st.markdown("*AI Engineer | Machine Learning | Data Science*")
-    
-    st.markdown("---")
-    
-    # Create two columns for the buttons with security indicators
-    btn_col1, btn_col2 = st.columns(2)
-    
-    with btn_col1:
-        st.link_button(
-            "🔗 GitHub 🔒", 
-            "https://github.com/sundar66kalyan/Employee_Performance_Deployment", 
-            use_container_width=True,
-            help="Secure GitHub repository link"
-        )
-    
-    with btn_col2:
-        st.link_button(
-            "💼 LinkedIn 🔒", 
-            "https://www.linkedin.com/in/kalyana-sundar-912403285", 
-            use_container_width=True,
-            help="Secure LinkedIn profile link"
-        )
     
     st.markdown("---")
     
@@ -1331,6 +1251,18 @@ with col2:
             <span style="display: inline-block; background: rgba(102, 126, 234, 0.15); border: 1px solid rgba(102, 126, 234, 0.3); border-radius: 20px; padding: 0.2rem 0.8rem; margin: 0.2rem; font-size: 0.8rem; color: #667eea;">Streamlit</span>
             <span style="display: inline-block; background: rgba(102, 126, 234, 0.15); border: 1px solid rgba(102, 126, 234, 0.3); border-radius: 20px; padding: 0.2rem 0.8rem; margin: 0.2rem; font-size: 0.8rem; color: #667eea;">Plotly</span>
             <span style="display: inline-block; background: rgba(102, 126, 234, 0.15); border: 1px solid rgba(102, 126, 234, 0.3); border-radius: 20px; padding: 0.2rem 0.8rem; margin: 0.2rem; font-size: 0.8rem; color: #667eea;">Gradient Boosting</span>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+    
+    # GitHub Link (only here, not in sidebar)
+    st.markdown(
+        """
+        <div style="text-align: center; margin: 0.8rem 0;">
+            <a href="https://github.com/sundar66kalyan/Employee_Performance_Deployment" target="_blank" class="github-link">
+                🐙 View on GitHub
+            </a>
         </div>
         """,
         unsafe_allow_html=True
